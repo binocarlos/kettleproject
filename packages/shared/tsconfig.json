@@ -1,14 +1,7 @@
 {
-  "extends": "../../tsconfig",
+  "extends": "../tsconfig.settings.json",
   "compilerOptions": {
-    "declaration": true,
-    "declarationMap": true,
-    "baseUrl": ".",
-    "noEmit": false,
-    "outDir": "dist",
-    "module": "commonjs",
     "rootDir": "src",
-    "composite": true
-  },
-  "exclude": ["dist"]
+    "outDir": "lib"
+  }
 }

@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "@projectkettle/shared": "^1.0.5",
-    "module-alias": "^2.2.2",
     "ts-node": "^10.4.0"
   },
   "devDependencies": {

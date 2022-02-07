@@ -2,6 +2,8 @@
   "name": "@projectkettle/shared",
   "description": "Shared code",
   "version": "1.0.5",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
   "scripts": {},
   "devDependencies": {
     "typescript": "^4.4.4"

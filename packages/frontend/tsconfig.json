@@ -1,25 +1,10 @@
 {
-  "extends": "../../tsconfig",
+  "extends": "../tsconfig.settings.json",
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
-    "skipLibCheck": false,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "paths": {
-      "@projectkettle/shared": ["../shared"]
-    }
+    "rootDir": "src",
+    "outDir": "lib"
   },
-  "include": ["src/**/*"],
-  "references": [{ "path": "../shared" }]
+  "references": [
+    { "path": "../shared" }
+  ]
 }

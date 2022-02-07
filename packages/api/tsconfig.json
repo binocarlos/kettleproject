@@ -1,25 +1,10 @@
 {
+  "extends": "../tsconfig.settings.json",
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "strict": true,
-    "noImplicitAny": false,
-    "strictPropertyInitialization": false,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    "declaration": true,
-    "declarationMap": true,
-    "emitDecoratorMetadata": true,
-    "noEmit": false,
-    "resolveJsonModule": true,
-    "outDir": "lib",
     "rootDir": "src",
-    "baseUrl": "./",
-    "paths": {
-      "@projectkettle/shared": ["../shared"]
-    }
+    "outDir": "lib"
   },
-  "include": ["src/**/*"],
-  "references": [{ "path": "../shared" }]
+  "references": [
+    { "path": "../shared" }
+  ]
 }
