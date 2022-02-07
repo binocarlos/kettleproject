@@ -1,7 +1,7 @@
 {
   "name": "@projectkettle/shared",
   "description": "Shared code",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {},
   "devDependencies": {
     "typescript": "^4.4.4"
