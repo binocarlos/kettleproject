@@ -1,0 +1,22 @@
+{
+  "name": "@projectkettle/workspace",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "version": "1.0.0",
+  "description": "projectkettle monorepo",
+  "main": "index.js",
+  "scripts": {
+    "bootstrap": "lerna bootstrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binocarlos/projectkettle.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "lerna": "^3.13.1"
+  },
+  "dependencies": {}
+}

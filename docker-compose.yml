@@ -1,0 +1,57 @@
+version: '3.4'
+services:
+  router:
+    image: binocarlos/noxy
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      - api
+      - frontend
+    environment:
+      - NOXY_DEFAULT_HOST=frontend
+      - NOXY_DEFAULT_PORT=3000
+      - NOXY_DEFAULT_WS=1
+      - NOXY_API_FRONT=/api/v1
+      - NOXY_API_HOST=api
+      - NOXY_API_WS=1
+  frontend:
+    working_dir: /app/packages/frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: build-env
+    restart: always
+    env_file: .env
+    ports:
+      - 8080:3000
+    entrypoint: bash -c 'if [ -n "$MANUALRUN" ]; then tail -f /dev/null; else echo "running" && yarn dev; fi'
+    environment:
+      - NODE_ENV=development
+      - MANUALRUN
+    #volumes:
+      # - ./packages/frontend/index.html:/app/packages/frontend/index.html
+      # - ./packages/frontend/package.json:/app/packages/frontend/package.json
+      # - ./packages/frontend/tsconfig.json:/app/packages/frontend/tsconfig.json
+      # - ./packages/frontend/vite.config.ts:/app/packages/frontend/vite.config.ts
+      # - ./packages/frontend/src:/app/packages/frontend/src
+      # - ./packages/shared/src:/app/packages/shared/src
+  api:
+    working_dir: /app/packages/api
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: build-env
+    restart: always
+    env_file: .env
+    ports:
+      - 8081:80
+    entrypoint: bash -c 'if [ -n "$MANUALRUN" ]; then tail -f /dev/null; else echo "running" && yarn dev; fi'
+    environment:
+      - NODE_ENV=development
+      - MANUALRUN
+    #volumes:
+      # - ./packages/api/package.json:/app/packages/api/package.json
+      # - ./packages/api/tsconfig.json:/app/packages/api/tsconfig.json
+      # - ./packages/api/src:/app/packages/api/src
+      # - ./packages/shared/src:/app/packages/shared/src

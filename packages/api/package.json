@@ -1,0 +1,16 @@
+{
+  "name": "@projectkettle/api",
+  "description": "Api code",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "ts-node src/index.ts"
+  },
+  "dependencies": {
+    "@projectkettle/shared": "^1.0.0",
+    "module-alias": "^2.2.2",
+    "ts-node": "^10.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
