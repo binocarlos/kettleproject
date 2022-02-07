@@ -23,5 +23,6 @@
     "@vitejs/plugin-react": "^1.0.7",
     "typescript": "^4.4.4",
     "vite": "^2.7.2"
-  }
+  },
+  "gitHead": "e5cc10924cc022913406c16258749efa43c5ea03"
 }

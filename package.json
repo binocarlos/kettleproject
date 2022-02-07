@@ -1,6 +1,5 @@
 {
   "name": "@projectkettle/workspace",
-  "private": true,
   "workspaces": [
     "packages/*"
   ],
