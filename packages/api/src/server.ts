@@ -32,7 +32,15 @@ export class Server {
       .use(cookieParser())
       .use(compress({}))
       .use(methodOverride())
-      .use(bodyParser.json())
+      .use(bodyParser.json({ type: 'application/*+json' }))
+      .use(bodyParser.raw({ 
+        verify: (req, res, buf) => {
+          if (req.headers['stripe-signature'] || req.headers['x-raw-upload']) {
+            req['rawBody'] = buf
+          }
+        }  
+      }))
+      .use(bodyParser.text({ type: 'text/html' }))
       .use(bodyParser.urlencoded({
         extended: true
       }))

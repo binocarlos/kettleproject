@@ -1,5 +1,6 @@
 import {Get} from "@tsed/schema"
 import {Controller} from "@tsed/di"
+import {QueryParams} from "@tsed/platform-params"
 
 import {
   Thing,
@@ -16,8 +17,8 @@ const item: Thing = {
 
 @Controller("/test")
 export class TestCtrl {
-  @Get()
-  findAll(): string {
-    return item.name
+  @Get('/')
+  message(@QueryParams() query: any): string {
+    return item.name + ' --- ' + JSON.stringify(query)
   }
 }
