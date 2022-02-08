@@ -3,7 +3,7 @@
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "lib",
-    "jsx": "react"
+    "jsx": "react-jsx"
   },
   "references": [
     { "path": "../shared" }
