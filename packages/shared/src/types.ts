@@ -1,8 +1,8 @@
 import { Static, Type } from '@sinclair/typebox'
 
-export const Thing = Type.Object({
+export const Todo = Type.Object({
   name: Type.String(),
-  amount: Type.Number(),
+  text: Type.String(),
 })
 
-export type IThing = Static<typeof Thing>
+export type ITodo = Static<typeof Todo>

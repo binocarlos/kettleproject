@@ -1,1 +1,0 @@
-export const MESSAGE: string = 'hello world apples 7'

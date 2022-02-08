@@ -1,23 +1,16 @@
-import fs from 'fs'
-import Fastify, { FastifyRequest, FastifyReply } from 'fastify'
+import { Type } from '@sinclair/typebox'
+import Fastify from 'fastify'
 
 import {
-  Thing,
-  IThing,
+  Todo,
+  ITodo,
 } from '@projectkettle/shared/src/types'
-
-import {
-  MESSAGE,
-} from '@projectkettle/shared/src/constants'
 
 import {
   mountPath,
 } from './settings'
 
-let item: IThing = {
-  name: MESSAGE,
-  amount: 10,
-}
+let items: ITodo[] = []
 
 const server = Fastify({ logger: true })
 
@@ -25,31 +18,31 @@ server.get<{
   Querystring: {
     fruit: string,
   },
-  Reply: IThing,
-}>(mountPath('/item'), {
+  Reply: ITodo[],
+}>(mountPath('/items'), {
   schema: {
     response: {
-      200: Thing,
+      200: Type.Array(Todo),
     }
   }
 }, async (req, res) => {
   const { fruit } = req.query
-  return item
+  return items
 })
 
 server.post<{
-  Body: IThing,
-  Reply: IThing,
-}>(mountPath('/item'), {
+  Body: ITodo,
+  Reply: ITodo,
+}>(mountPath('/items'), {
   schema: {
-    body: Thing,
+    body: Todo,
     response: {
-      201: Thing,
+      201: Todo,
     }
   }
 }, async (req, res) => {
-  item = req.body
-  return item
+  items = items.concat([req.body])
+  return req.body
 })
 
 const start = async () => {
