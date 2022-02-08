@@ -13,5 +13,6 @@ With docker:
 
 ```bash
 docker-compose build
-docker-compose up
+bash scripts/tmux.sh
+bash scripts/tmux.sh stop
 ```

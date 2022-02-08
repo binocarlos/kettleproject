@@ -1,3 +1,4 @@
 export interface Thing {
-  name: string | number | boolean,
+  name: string,
+  amount: number,
 }

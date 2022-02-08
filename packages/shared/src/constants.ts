@@ -1,1 +1,1 @@
-export const MESSAGE: string = 'hello world apples 6'
+export const MESSAGE: string = 'hello world apples 7'

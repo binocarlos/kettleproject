@@ -1,16 +1,19 @@
-import {
-  Thing,
-} from '@projectkettle/shared/src/types'
+import {$log} from "@tsed/common"
+import {PlatformExpress} from "@tsed/platform-express"
+import {Server} from "./server"
 
-import {
-  MESSAGE,
-} from '@projectkettle/shared/src/constants'
+async function bootstrap() {
+  try {
+    $log.debug("Start server...")
+    const platform = await PlatformExpress.bootstrap(Server, {
+      // extra settings
+    })
 
-const item: Thing = {
-  name: MESSAGE ? true : 10,
+    await platform.listen()
+    $log.debug("Server initialized")
+  } catch (er) {
+    $log.error(er)
+  }
 }
 
-setInterval(() => {
-  console.log(MESSAGE)
-  console.dir(item)
-}, 1000)
+bootstrap()
