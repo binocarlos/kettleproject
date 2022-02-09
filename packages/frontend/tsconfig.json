@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.settings.json",
+  "extends": "../../tsconfig.settings.json",
   "compilerOptions": {
     "rootDir": ".",
     "outDir": "lib",
@@ -7,5 +7,8 @@
   },
   "references": [
     { "path": "../shared" }
+  ],
+  "include": [
+    "src/**/*"
   ]
 }

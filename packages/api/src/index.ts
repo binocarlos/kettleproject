@@ -10,7 +10,11 @@ import {
   mountPath,
 } from './settings'
 
-let items: ITodo[] = []
+let items: ITodo[] = [{
+  name: 'apples',
+  text: 'oranges',
+  comment: 'hello',
+}]
 
 const server = Fastify({ logger: true })
 

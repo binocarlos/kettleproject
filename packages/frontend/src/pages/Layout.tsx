@@ -6,6 +6,9 @@ import Box from '@mui/material/Box'
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import List from '@mui/material/List'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import ListItemText from '@mui/material/ListItemText'
 import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
@@ -17,7 +20,15 @@ import Link from '@mui/material/Link'
 import MenuIcon from '@mui/icons-material/Menu'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import NotificationsIcon from '@mui/icons-material/Notifications'
-import { mainListItems, secondaryListItems } from './Menus'
+import DashboardIcon from '@mui/icons-material/Dashboard'
+import ListIcon from '@mui/icons-material/List'
+
+import {
+  Todo,
+  ITodo,
+} from '@projectkettle/shared/src/types'
+
+let items: ITodo[] = []
 
 function Copyright(props: any) {
   return (
@@ -87,7 +98,7 @@ const mdTheme = createTheme()
 const DashboardContent: React.FC = ({
   children,
 }) => {
-  const [open, setOpen] = React.useState(true)
+  const [open, setOpen] = React.useState(false)
   const toggleDrawer = () => {
     setOpen(!open)
   }
@@ -145,9 +156,22 @@ const DashboardContent: React.FC = ({
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
-            <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+            <ListItemButton sx={{
+              pl: '22px',
+            }}>
+              <ListItemIcon>
+                <DashboardIcon />
+              </ListItemIcon>
+              <ListItemText primary="Dashboard" />
+            </ListItemButton>
+            <ListItemButton sx={{
+              pl: '22px',
+            }}>
+              <ListItemIcon>
+                <ListIcon />
+              </ListItemIcon>
+              <ListItemText primary="Orders" />
+            </ListItemButton>
           </List>
         </Drawer>
         <Box
@@ -175,7 +199,7 @@ const DashboardContent: React.FC = ({
                     height: 240,
                   }}
                 >
-                  CHART
+                  section #1
                 </Paper>
               </Grid>
               {/* Recent Deposits */}
@@ -188,13 +212,13 @@ const DashboardContent: React.FC = ({
                     height: 240,
                   }}
                 >
-                  DEPOSITS
+                  section #2
                 </Paper>
               </Grid>
               {/* Recent Orders */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  ORDERS
+                  section #3
                 </Paper>
               </Grid>
             </Grid>

@@ -8,8 +8,9 @@ import {
 } from '@projectkettle/shared/src/types'
 
 const item: ITodo = {
-  name: 'test',
   text: 'test',
+  name: 'test',
+  comment: 'test',
 }
 
 setInterval(() => {

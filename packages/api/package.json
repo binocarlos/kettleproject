@@ -3,7 +3,8 @@
   "description": "Api code",
   "version": "1.0.5",
   "scripts": {
-    "dev": "ts-node src/index.ts"
+    "dev": "ts-node src/index.ts",
+    "tsc": "tsc -b tsconfig.json"
   },
   "dependencies": {
     "@projectkettle/shared": "^1.0.5",
