@@ -564,6 +564,14 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.2.tgz#423c77877d0569db20e1fc80885ac4118314010e"
   integrity sha512-eZxlbI8GZscaGS7kkc/trHTT5xgrjH3/1n2JDwusC9iahPKWMRvRjJSAN5mCXviuTGQ/lHnhvv8Q1YTpnfz9gA==
 
+"@types/hookrouter@^2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@types/hookrouter/-/hookrouter-2.2.5.tgz#f04dafd1e073da01ba85f79100c41de530969cea"
+  integrity sha512-uesCRVHgugHtpfdtXWcNH60gCvn7qwQVap6s2KtHRZ8uhDJear8osTmgImATc5aOUC6iNWJzeYMSvGUc/lFf2A==
+  dependencies:
+    "@types/react" "*"
+    csstype "^3.0.2"
+
 "@types/node@^17.0.16":
   version "17.0.16"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.16.tgz#e3733f46797b9df9e853ca9f719c8a6f7b84cd26"
@@ -973,6 +981,13 @@ avvio@^7.1.2:
     debug "^4.0.0"
     fastq "^1.6.1"
     queue-microtask "^1.1.2"
+
+axios@^0.25.0:
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.25.0.tgz#349cfbb31331a9b4453190791760a8d35b093e0a"
+  integrity sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==
+  dependencies:
+    follow-redirects "^1.14.7"
 
 babel-code-frame@^6.26.0:
   version "6.26.0"
@@ -2665,6 +2680,11 @@ fn-name@^2.0.0:
   resolved "https://registry.yarnpkg.com/fn-name/-/fn-name-2.0.1.tgz#5214d7537a4d06a4a301c0cc262feb84188002e7"
   integrity sha1-UhTXU3pNBqSjAcDMJi/rhBiAAuc=
 
+follow-redirects@^1.14.7:
+  version "1.14.8"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.8.tgz#016996fb9a11a100566398b1c6839337d7bfa8fc"
+  integrity sha512-1x0S9UVJHsQprFcEC/qnNzBLcIxsjAV905f/UkQxbclCsoTWlacCNOpQa/anodLl2uaEKFhfWOvM2Qg77+15zA==
+
 for-in@^1.0.1, for-in@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -3017,6 +3037,11 @@ home-or-tmp@^2.0.0:
   dependencies:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.1"
+
+hookrouter@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/hookrouter/-/hookrouter-1.2.5.tgz#ea1b88fd9f6a48816b17145bfb2b38dfc93df21e"
+  integrity sha512-9OLve2u+JZDCOgPnxJu5dvg/mU1w2ZWWlSOFxCKcGQKRSH1MXI8tMwEgm64mQfjZLET/7yFRTUrZ4hUYoK0ezw==
 
 hosted-git-info@^2.1.4, hosted-git-info@^2.5.0:
   version "2.8.9"
@@ -4599,6 +4624,11 @@ react-dom@^17.0.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     scheduler "^0.20.2"
+
+react-hook-form@^7.26.1:
+  version "7.26.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.26.1.tgz#8f5c0aa81a452f5ebcb6a2d7253800011e735b1c"
+  integrity sha512-/Qw/7IsCCVfYSGryJAMcouEpIDgWZJPeHR15J0IFSgo1BgofcfnY+AeUDcYD1E3yzzXYpR7NHyJehhkBKvjdMg==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"

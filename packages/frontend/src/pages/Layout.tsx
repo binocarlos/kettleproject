@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { navigate } from 'hookrouter'
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import MuiDrawer from '@mui/material/Drawer'
@@ -22,6 +23,10 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import ListIcon from '@mui/icons-material/List'
+
+import {
+  IRouteObject,
+} from '../routes'
 
 import {
   Todo,
@@ -95,9 +100,13 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme()
 
-const DashboardContent: React.FC = ({
-  children,
+const Layout: React.FC<{
+  route: IRouteObject,
+}> = ({
+  route,
+  children,  
 }) => {
+
   const [open, setOpen] = React.useState(false)
   const toggleDrawer = () => {
     setOpen(!open)
@@ -132,7 +141,7 @@ const DashboardContent: React.FC = ({
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              { route.title || 'Page' }
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -156,21 +165,31 @@ const DashboardContent: React.FC = ({
           </Toolbar>
           <Divider />
           <List component="nav">
-            <ListItemButton sx={{
-              pl: '22px',
-            }}>
+            <ListItemButton
+              sx={{
+                pl: '20px',
+              }}
+              onClick={ () => {
+                navigate('/')
+              }}
+            >
               <ListItemIcon>
                 <DashboardIcon />
               </ListItemIcon>
-              <ListItemText primary="Dashboard" />
+              <ListItemText primary="Home" />
             </ListItemButton>
-            <ListItemButton sx={{
-              pl: '22px',
-            }}>
+            <ListItemButton
+              sx={{
+                pl: '20px',
+              }}
+              onClick={ () => {
+                navigate('/items')
+              }}
+            >
               <ListItemIcon>
                 <ListIcon />
               </ListItemIcon>
-              <ListItemText primary="Orders" />
+              <ListItemText primary="Items" />
             </ListItemButton>
           </List>
         </Drawer>
@@ -188,40 +207,7 @@ const DashboardContent: React.FC = ({
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  section #1
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  section #2
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  section #3
-                </Paper>
-              </Grid>
-            </Grid>
+            { children }
             <Copyright sx={{ pt: 4 }} />
           </Container>
         </Box>
@@ -230,6 +216,4 @@ const DashboardContent: React.FC = ({
   )
 }
 
-export default function Dashboard() {
-  return <DashboardContent />
-}
+export default Layout
